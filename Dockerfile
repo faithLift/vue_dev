@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:latest
 
-MAINTAINER wangshuangyi046 "ex_wljr_wangshuangyi@pingan.com.cn"
+MAINTAINER blowhunter "blowhunter2009@gmail.com"
 
 RUN apk add --no-cache git
 RUN npm install vue vue-cli cross-env -g
