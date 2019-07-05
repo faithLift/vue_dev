@@ -1,11 +1,12 @@
 version: '3'
 services:
     vue_dev_wsy:
-        image: test_vue:v1
+        image: wsy/vue_dev:v1.1
         container_name: vue_dev_wsy
         restart: always
         volumes:
-            - ./vue-element-admin:/vue:rw
+          #- ./vue-element-admin:/vue:rw
+          - ./vue-admin-template:/vue:rw
         ports:
             - "8000:8000"
         command:
