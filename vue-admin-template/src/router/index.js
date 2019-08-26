@@ -35,7 +35,8 @@ export const constantRouterMap = [
     component: Layout,
     redirect: '/dashboard',
     name: 'Dashboard',
-    hidden: true,
+    hidden: false,
+    meta: { title: 'Dashboard', icon: 'dashboard' },
     children: [
       {
         path: 'dashboard',
@@ -53,15 +54,23 @@ export const constantRouterMap = [
     children: [
       {
         path: 'ucdDash',
-        name: 'ucdDash',
         component: () => import('@/views/deploy/ucdDash'),
         meta: { title: 'UCD部署', icon: 'chart' }
-      },
+      }
+    ]
+  },
+
+  {
+    path: '/myApp',
+    component: Layout,
+    redirect: '/myApp/index',
+    name: 'myApp',
+    meta: { title: '我的应用', icon: 'guide' },
+    children: [
       {
-        path: 'deploy_tst',
-        name: 'deploy_tst',
-        component: () => import('@/views/deploy/deploy_tst'),
-        meta: { title: '待添加', icon: 'chart' }
+        path: 'App',
+        component: () => import('@/views/myApp/index'),
+        meta: { title: '我的应用', icon: 'guide' }
       }
     ]
   },
