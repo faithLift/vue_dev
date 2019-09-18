@@ -12,7 +12,7 @@
   <tab-action />
 </div>
 <div v-else-if="type=='modify'">
-  <tab-modify />
+  <tab-modify /> 
 </div>
 </template>
 
