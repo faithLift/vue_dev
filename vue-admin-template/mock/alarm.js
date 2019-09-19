@@ -8,7 +8,7 @@ const List_related = []
 const List_midware = [] */
 const count = 100
 
-const baseContent = '我是测试数据我是测试数据'
+// const baseContent = '我是测试数据我是测试数据'
 
 for (let i = 0; i < count; i++) {
   List['biz'] = []
@@ -19,7 +19,7 @@ for (let i = 0; i < count; i++) {
     id: '@increment',
     'source|1': ['detector', 'F16'],
     alarmtime: '@datetime',
-    alarm_content: baseContent,
+    alarm_content: '@cparagraph()',
     'alarm_level|1': ['warning', 'major', 'critical'],
     'status|1': ['undo', 'doing', 'done'],
     update_time: '@datetime',
@@ -29,7 +29,7 @@ for (let i = 0; i < count; i++) {
     id: '@increment',
     'source|1': ['F16', 'cat', 'zabbix'],
     alarmtime: '@datetime',
-    alarm_content: baseContent,
+    alarm_content: '@cparagraph()',
     'alarm_level|1': ['warning', 'major', 'critical'],
     'status|1': ['undo', 'doing', 'done'],
     update_time: '@datetime',
@@ -39,7 +39,7 @@ for (let i = 0; i < count; i++) {
     id: '@increment',
     'source|1': ['detector', 'F16', 'easydb'],
     alarmtime: '@datetime',
-    alarm_content: baseContent,
+    alarm_content: '@cparagraph()',
     'alarm_level|1': ['warning', 'major', 'critical'],
     'status|1': ['undo', 'doing', 'done'],
     update_time: '@datetime',
@@ -49,7 +49,7 @@ for (let i = 0; i < count; i++) {
     id: '@increment',
     'source|1': ['grafana'],
     alarmtime: '@datetime',
-    alarm_content: baseContent,
+    alarm_content: '@cparagraph()',
     'alarm_level|1': ['warning', 'major', 'critical'],
     'status|1': ['undo', 'doing', 'done'],
     update_time: '@datetime',
@@ -63,7 +63,8 @@ export default {
     const { biz, source, page = 1, limit = 20, sort } = param2Obj(config.url)
     const mockList = {}
 
-    // console.log('type, page, sort', source, page, sort)
+    console.log('biz, source, page, sort', biz, source, page, sort)
+    console.log(List[biz])
     mockList[biz] = List[biz].filter(item => {
       // console.log('Item: ', item.source)
       if (source && item.source !== source) return false

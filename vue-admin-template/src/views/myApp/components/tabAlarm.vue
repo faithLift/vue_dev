@@ -75,7 +75,7 @@
 </template>
 
 <script>
-/* import { fetchList } from "@/api/alarm"; */
+import { fetchList } from "@/api/alarm";
 /* const defaultAlarmLevel = ['critical', 'major', 'warning'] */
 
 export default {
@@ -130,23 +130,22 @@ export default {
     } catch (e) {
       console.error('Error: ', e)
     }
-    
   },
   methods: {
     getList(biz) {
-      // this.loading = true;
+      this.loading = true;
       //this.$emit("create"); // for test
       this.listQuery.biz = biz
       try {
-        /* fetchList(this.listQuery).then(response => {
+        fetchList(this.listQuery).then(response => {
           console.log('Response', response.data.items)
           // console.log('List: ', this.list);
           this.datas[biz]  = response.data.items;
-          // console.log(this.datas)
-          // this.loading = false;
+          console.log(this.datas)
+          this.loading = false;
           // return response.data.items;
-        }); */
-        var res = {}
+        });
+        /* var res = {}
         switch(biz) {
           case 'biz':
             res = [
@@ -371,7 +370,7 @@ export default {
           default:
             res = res
         }
-        this.datas[biz] = res
+        this.datas[biz] = res */
       } catch (e) {
         console.error('Error: ', e)
       }

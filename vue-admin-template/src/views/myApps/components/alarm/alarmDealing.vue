@@ -1,9 +1,7 @@
 <template>
   <div class="dealing-container">
     <div class="dealing-line">
-      <el-steps :step.sync="step" process-status="process" finish-status="success" align-center>
-        <el-step :title="item.title" v-for="item in dealingLine" :key="item.key"></el-step>
-      </el-steps>
+      <light-timeline :items="dealingLine"></light-timeline>
     </div>
   </div>
 </template>
@@ -14,7 +12,13 @@ export default {
   data() {
     return {
       step: 0,
-      dealingLine: [{ id: 0, title: '' }]
+      dealingLine: [
+        { tag: '2019-09-21 23:30', type: 'circle', content: '处置如下: 速冻发生地发生地发生地发生地速冻分尸案打法' },
+        { tag: '2019-09-21 23:55', type: 'circle', content: '处置如下: 速冻发生地发生地发生地发生地速冻分尸案打法' },
+        { tag: '2019-09-22 00:45', type: 'star', content: '处置如下: 速冻发生地发生地发生地发生地速冻分尸案打法' },
+        { tag: '2019-09-22 01:15', type: 'circle', content: '处置如下: 速冻发生地发生地发生地发生地速冻分尸案打法' },
+        { tag: '2019-09-22 03:35', type: 'star', content: '处置如下: 速冻发生地发生地发生地发生地速冻分尸案打法' },
+      ]
     }
   }
 }
@@ -28,5 +32,8 @@ export default {
   min-height: 600px;
   border: 1px solid whitesmoke;
   box-shadow: 4px 4px 3px #ddd;
+}
+.dealing-line {
+  padding-left: 5%;
 }
 </style>
