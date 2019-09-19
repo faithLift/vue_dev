@@ -76,6 +76,27 @@ export const constantRouterMap = [
   },
 
   {
+    path: '/myApps',
+    component: Layout,
+    redirect: '/myApps/index',
+    meta: { title: '应用测试', icon: 'example' },
+    children: [
+      {
+        path: 'index',
+        name: 'myApps',
+        component: () => import('@/views/myApps/index'),
+        meta: { title: '应用测试', icon: 'example' }
+      },
+      {
+        path: 'alarm',
+        name: 'AlarmFlow',
+        component: () => import('@/views/myApps/components/alarm/alarm'),
+        hidden: true
+      }
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
