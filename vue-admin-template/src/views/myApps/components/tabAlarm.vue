@@ -11,12 +11,12 @@
       </div>
       <div class="alarm-table">
         <el-table :data="datas" border fit highlight-current-row>
-          <el-table-column v-if="isShow" align="center" lael="选择" min-width="35px" :key="key">
+          <el-table-column v-if="isShow" align="center" label="选择" min-width="35px" :key="key">
             <template slot-scope="scope">
               <input type="checkbox" :value="scope.row.alarm_id" v-model="checkedNames" />
             </template>
           </el-table-column>
-          <el-table-column align="center" label="事件ID" min-width="85px">
+          <el-table-column align="center" label="告警ID" min-width="105px">
             <template slot-scope="scope">
               <span>{{ scope.row.alarm_id }}</span>
             </template>
@@ -60,33 +60,33 @@
 
 <script>
 export default {
-  name: "alarmF",
+  name: 'alarmF',
   filters: {
     statusFilter(status) {
       const statusMap = {
-        done: "success",
-        doing: "warn",
-        undo: "danger"
-      };
-      return statusMap[status];
+        done: 'success',
+        doing: 'warn',
+        undo: 'danger'
+      }
+      return statusMap[status]
     },
     levelFilter(level) {
       const levelMap = {
-        warning: "success",
-        major: "warn",
-        critical: "danger"
-      };
-      return levelMap[level];
+        warning: 'success',
+        major: 'warn',
+        critical: 'danger'
+      }
+      return levelMap[level]
     }
   },
   props: {
     type: {
       type: String,
-      default: "warning"
+      default: 'warning'
     },
     source: {
       type: String,
-      default: "detector"
+      default: 'detector'
     }
   },
   data() {
@@ -95,237 +95,237 @@ export default {
       key: 1,
       checkedNames: [],
       isShow: false
-    };
+    }
   },
   created() {
     try {
-      this.getList();
+      this.getList()
     } catch (e) {
-      console.error("Errors: ", e);
+      console.error('Errors: ', e)
     }
   },
   methods: {
     getList() {
       try {
-        (this.datas = [
+        ;(this.datas = [
           {
-            alarm_id: "2019091112031101",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031101',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "doing",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'doing',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031102",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031102',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "done",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'done',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031103",
-            alarm_content: "测试数据",
-            alarm_level: "warning",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031103',
+            alarm_content: '测试数据',
+            alarm_level: 'warning',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "undo",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'undo',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031104",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031104',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "done",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'done',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031105",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031105',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "done",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'done',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031106",
-            alarm_content: "测试数据",
-            alarm_level: "major",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031106',
+            alarm_content: '测试数据',
+            alarm_level: 'major',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "doing",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'doing',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031107",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031107',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "undo",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'undo',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031108",
-            alarm_content: "测试数据",
-            alarm_level: "major",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031108',
+            alarm_content: '测试数据',
+            alarm_level: 'major',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "done",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'done',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031109",
-            alarm_content: "测试数据",
-            alarm_level: "warning",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031109',
+            alarm_content: '测试数据',
+            alarm_level: 'warning',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "undo",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'undo',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031110",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031110',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "done",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'done',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031111",
-            alarm_content: "测试数据",
-            alarm_level: "major",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031111',
+            alarm_content: '测试数据',
+            alarm_level: 'major',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "doing",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'doing',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031112",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031112',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "doing",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'doing',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031113",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031113',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "done",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'done',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031114",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031114',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "undo",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'undo',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031115",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031115',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "undo",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'undo',
+            update_time: '2019-08-23 10:11:12'
           },
           {
-            alarm_id: "2019091112031116",
-            alarm_content: "测试数据",
-            alarm_level: "critical",
-            alarm_time: "2019-08-23 09:20:31",
+            alarm_id: '2019091112031116',
+            alarm_content: '测试数据',
+            alarm_level: 'critical',
+            alarm_time: '2019-08-23 09:20:31',
             pageViews: 4592,
-            source: "grafana",
-            status: "done",
-            update_time: "2019-08-23 10:11:12"
+            source: 'grafana',
+            status: 'done',
+            update_time: '2019-08-23 10:11:12'
           }
         ]),
-          this.datas.sort(function(m, n, p = "alarm_id") {
-            var a = m[p];
-            var b = n[p];
-            return a - b;
-          });
+          this.datas.sort(function(m, n, p = 'alarm_id') {
+            var a = m[p]
+            var b = n[p]
+            return a - b
+          })
       } catch (e) {
-        console.error("Errors: ", e);
+        console.error('Errors: ', e)
       }
     },
     getLabel(label) {
       switch (label) {
-        case "biz":
-          label = "业务层";
-          break;
-        case "app":
-          label = "应用层";
-          break;
-        case "related":
-          label = "关联组件层";
-          break;
-        case "nidware":
-          label = "技术组件和中间层";
-          break;
-        case "os":
-          label = "系统层";
-          break;
+        case 'biz':
+          label = '业务层'
+          break
+        case 'app':
+          label = '应用层'
+          break
+        case 'related':
+          label = '关联组件层'
+          break
+        case 'nidware':
+          label = '技术组件和中间层'
+          break
+        case 'os':
+          label = '系统层'
+          break
         default:
-          label = label;
+          label = label
       }
-      return label;
+      return label
     },
     checkBiz(valArr) {
-      console.log(varArr);
+      console.log(varArr)
       this.datas[alarm_level] = this.datas[alarm_level].filter(item => {
-        if (alarm_level && item.alarm_level !== alarm) return false;
-        return true;
-      });
-      this.key += 1;
+        if (alarm_level && item.alarm_level !== alarm) return false
+        return true
+      })
+      this.key += 1
     },
     showSelect() {
       if (this.isShow) {
-        this.isShow = false;
+        this.isShow = false
       } else {
-        this.isShow = true;
+        this.isShow = true
       }
     },
     alarmFlow() {
       this.$router.push({
-        name: "AlarmFlow",
+        name: 'AlarmFlow',
         query: {
           relatedEvent: this.checkedNames
         }
-      });
-      console.log(this.checkedNames);
+      })
+      console.log(this.checkedNames)
     }
   }
-};
+}
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>

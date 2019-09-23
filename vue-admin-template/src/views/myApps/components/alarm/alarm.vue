@@ -61,7 +61,7 @@ export default {
       flowLine: [
         { id: 0, label: '汇聚事件', icon: 'el-icon-sort' },
         /* { id: 1, label: "确定方案", icon: "el-icon-document" }, */
-        { id: 1, label: '定制并实施方案', icon: 'el-icon-loading' },
+        { id: 1, label: '事件处置过程', icon: 'el-icon-loading' },
         { id: 2, label: '总结', icon: 'el-icon-edit' }
       ]
     }

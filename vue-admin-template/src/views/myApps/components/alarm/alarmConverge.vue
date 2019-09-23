@@ -7,7 +7,7 @@
       </h2>
     </div>
     <el-table :data="related_datas" border fit highlight-current-row>
-      <el-table-column align="center" label="事件ID" min-width="85px">
+      <el-table-column align="center" label="事件ID" min-width="105px">
         <template slot-scope="scope">
           <span>{{ scope.row.alarm_id }}</span>
         </template>
@@ -51,211 +51,211 @@
 </template>
 
 <script>
-import { formatDate } from "@/utils/formatDate";
+import { formatDate } from '@/utils/formatDate'
 export default {
-  name: "alarmConverge",
+  name: 'alarmConverge',
   filters: {
     statusFilter(status) {
       const statusMap = {
-        done: "success",
-        doing: "warn",
-        undo: "danger"
-      };
-      return statusMap[status];
+        done: 'success',
+        doing: 'warn',
+        undo: 'danger'
+      }
+      return statusMap[status]
     },
     levelFilter(level) {
       const levelMap = {
-        warning: "success",
-        major: "warn",
-        critical: "danger"
-      };
-      return levelMap[level];
+        warning: 'success',
+        major: 'warn',
+        critical: 'danger'
+      }
+      return levelMap[level]
     }
   },
   data() {
     return {
-      converge_no: "H" + formatDate(new Date(), "yyyyMMddhhmmss"),
+      converge_no: 'H' + formatDate(new Date(), 'yyyyMMddhhmmss'),
       related_event: this.$route.query.relatedEvent,
       related_datas: [],
       alarm_datas: [
         {
-          alarm_id: "2019091112031101",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031101',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "doing",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'doing',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031102",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031102',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "done",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'done',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031103",
-          alarm_content: "测试数据",
-          alarm_level: "warning",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031103',
+          alarm_content: '测试数据',
+          alarm_level: 'warning',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "undo",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'undo',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031104",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031104',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "done",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'done',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031105",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031105',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "done",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'done',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031106",
-          alarm_content: "测试数据",
-          alarm_level: "major",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031106',
+          alarm_content: '测试数据',
+          alarm_level: 'major',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "doing",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'doing',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031107",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031107',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "undo",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'undo',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031108",
-          alarm_content: "测试数据",
-          alarm_level: "major",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031108',
+          alarm_content: '测试数据',
+          alarm_level: 'major',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "done",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'done',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031109",
-          alarm_content: "测试数据",
-          alarm_level: "warning",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031109',
+          alarm_content: '测试数据',
+          alarm_level: 'warning',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "undo",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'undo',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031110",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031110',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "done",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'done',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031111",
-          alarm_content: "测试数据",
-          alarm_level: "major",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031111',
+          alarm_content: '测试数据',
+          alarm_level: 'major',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "doing",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'doing',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031112",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031112',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "doing",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'doing',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031113",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031113',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "done",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'done',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031114",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031114',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "undo",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'undo',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031115",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031115',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "undo",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'undo',
+          update_time: '2019-08-23 10:11:12'
         },
         {
-          alarm_id: "2019091112031116",
-          alarm_content: "测试数据",
-          alarm_level: "critical",
-          alarm_time: "2019-08-23 09:20:31",
+          alarm_id: '2019091112031116',
+          alarm_content: '测试数据',
+          alarm_level: 'critical',
+          alarm_time: '2019-08-23 09:20:31',
           pageViews: 4592,
-          source: "grafana",
-          status: "done",
-          update_time: "2019-08-23 10:11:12"
+          source: 'grafana',
+          status: 'done',
+          update_time: '2019-08-23 10:11:12'
         }
       ]
-    };
+    }
   },
   mounted() {
-    this.getRelated();
+    this.getRelated()
   },
   methods: {
     getRelated() {
       this.related_datas = this.alarm_datas.filter(
         data => this.related_event.indexOf(data.alarm_id) > -1
-      );
+      )
     },
     to_next: function() {
-      const val = 1;
-      this.$emit("getChildEvent", val);
+      const val = 1
+      this.$emit('getChildEvent', val)
     }
   }
-};
+}
 </script>
 
 <style scoped>
